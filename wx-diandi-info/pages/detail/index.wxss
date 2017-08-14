@@ -1,0 +1,84 @@
+/* pages/detail/index.wxss */
+
+swiper {
+  height: 100vw;
+  width: 100vw;
+}
+
+swiper image {
+  height: 100vw;
+  width: 100vw;
+}
+
+
+.logo {
+  font-size: 16px;
+  color: #666;
+  background-color: #fff;
+  margin-bottom: 1vh;
+  -webkit-tap-highlight-color: transparent;
+  padding: 3vw;
+}
+
+.logo .title {
+  font-size: 18px;
+}
+
+.logo .summary {
+  font-size: 14px;
+  color: #999;
+}
+
+
+.proinfo {
+  font-size: 16px;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  padding: 3vw;
+  margin-bottom: 1vh;
+}
+
+.proinfo .price {
+  font-size: 14px;
+  color: #999;
+}
+
+.listed {
+  background-color: #fff;
+  padding: 3vw;
+  font-size: 16px;
+}
+
+ .listed .dtitem {
+   padding: 3vw 0;
+   display: flex;
+   border-bottom: 1px solid #efefef;
+ }
+
+ .listed .dtitem .dt {
+    width: 30vw;
+ }
+
+ .listed .dtitem .dd {
+ }
+
+ .sep-title {
+   font-size: 18px;
+   margin: 3vw 0;
+   padding: 0 3vw;
+   border-left: 2vw solid #cb3340;
+ }
+
+ .desc {
+   background: #fff;
+   min-height: 20vh;
+   font-size: 16px;
+   padding: 3vw;
+ }
+
+ .notice {
+  padding: 3vw;
+  background: #fff;
+  min-height: 10vh;
+  font-size: 16px;
+}

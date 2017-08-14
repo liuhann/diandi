@@ -1,0 +1,23 @@
+<!--index.wxml-->
+<view class="container">
+  
+  <view class="logo">
+    <view class="title">点滴第21届大众收藏拍卖会预展资讯</view>
+    <view class="summary">共22件拍品，开始时间：2017-08-13 21:00</view>
+    <view class="notes">以下仅为预展资讯，参拍请搜索"点滴拍卖"公众号。</view>    
+  </view>
+
+  <view wx:for="{{tops}}" wx:for-item="top" class="topItems"  bindtap="navTo" data-icon="{{top.icon}}">
+      <view class="cpitem_pic">
+        <image src="{{top.icon}}" />
+      </view>         
+      <view class="cpitem_center">
+        <view class="title">{{top.title}}</view>
+      </view>           
+  </view>
+
+  <view class="notice">
+  每周日晚21:00进行线上拍卖，参拍请搜索关注微信公众号“点滴拍卖”
+  </view>
+  
+</view>

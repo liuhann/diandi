@@ -1,0 +1,81 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+
+.logo {
+  font-size: 16px;
+  color: #666;
+  background-color: #fff;
+  margin-bottom: 1vh;
+  -webkit-tap-highlight-color: transparent;
+  padding: 3vw;
+}
+
+.logo .title {
+  font-size: 18px;
+}
+
+.logo .summary {
+  font-size: 14px;
+  color: #999;
+}
+
+.topItems {
+  font-size: 16px;
+  color: #666;
+  background-color: #fff;
+  -webkit-tap-highlight-color: transparent;
+  padding: 3vw;
+  display: flex;
+  display: -webkit-box;
+  border-bottom: 1px solid #eee;
+}
+
+.cpitem_pic {
+    display: block;
+    margin-right: 3vw;
+    width: 20vw;
+    height: 20vw;
+}
+
+.cpitem_pic image {
+  border: 0;
+  width: 20vw;
+  height: 20vw;
+  vertical-align: bottom;
+}
+
+.cpitem_center {
+  width: 70vw;
+}
+
+.notice {
+  padding: 3vw;
+  background: #fff;
+  min-height: 10vh;
+  font-size: 16px;
+}
+
+.notes {
+  font-size: 14px;
+  color: #cb3340;
+}

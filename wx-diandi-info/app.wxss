@@ -1,0 +1,7 @@
+/**app.wxss**/
+.container {
+  background: #f3f4f5;
+  margin: 0 auto;
+  min-width: 320px;
+  font-family: "Helvetica Neue", Helvetica, STHeiTi, "Microsoft YaHei", Arial, sans-serif;
+} 

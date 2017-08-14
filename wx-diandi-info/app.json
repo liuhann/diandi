@@ -1,0 +1,12 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/detail/index"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#cb3340",
+    "navigationBarTitleText": "点滴拍卖",
+    "navigationBarTextStyle":"white"
+  }
+}
