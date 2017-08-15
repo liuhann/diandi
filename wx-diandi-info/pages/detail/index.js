@@ -23,7 +23,7 @@ Page({
       url: 'http://apps.qudiandi.com/auction/item/aid/' + options.aid + '.html',
       method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
       complete: function (res) {
-        res.data.pstart = util.formatTime(new Date(res.data.pstart)),
+        res.data.pstart = util.formatTime(new Date(res.data.pstart*1000)),
         that.setData({
           info: res.data
         });

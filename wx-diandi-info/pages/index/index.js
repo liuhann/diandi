@@ -38,7 +38,7 @@ Page({
               loading: false,
               title: res.data.name,
               total: res.data.number,
-              start: util.formatTime(new Date(res.data.start_time)),
+              start: util.formatTime(new Date(res.data.start_time*1000)),
               tops: res.data.auction
             });
           }
