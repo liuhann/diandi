@@ -2,15 +2,15 @@
 <view class="container">
 
   <view class="logo">
-    <view class="title">点滴第21届大众收藏拍卖会预展资讯</view>
-    <view class="summary">共22件拍品，开始时间：2017-08-13 21:00</view>
+    <view class="title">{{info.name}}</view>
+    <view class="summary">共{{total}}件拍品，开始时间：{{info.pstart}}</view>
     <view class="notes">以下仅为预展资讯，参拍请搜索"点滴拍卖"公众号。</view>    
   </view>
 
   <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-    <block wx:for="{{imgUrls}}">
+    <block wx:for="{{info.images}}">
       <swiper-item>
-        <image src="{{item}}" class="slide-image" width="355" height="150"/>
+        <image src="{{'http://photo.qudiandi.com/' + item + '!800w_800h_2e'}}" class="slide-image" width="355" height="150"/>
       </swiper-item>
     </block>
   </swiper>
@@ -18,10 +18,10 @@
 
   <view class="proinfo">
     <view class="title">
-    {{detail.title}}
+    {{info.title}}
     </view>
     <view class="price">
-    起拍价：{{detail.price}}
+    起拍价：{{info.start_price}}
     </view>
   </view>
 
@@ -29,19 +29,19 @@
   <view class="bitflow listed">
     <view class="dtitem">
       <view class="dt">延时周期</view>          
-      <view class="dd">30秒/次</view>
+      <view class="dd">{{info.delay_time}}秒/次</view>
     </view>
     <view class="dtitem">
       <view class="dt">起拍价</view>          
-      <view class="dd">{{detail.price}}</view>
-    </view>   
+      <view class="dd">{{info.start_price}}</view>
+    </view>
     <view class="dtitem">
       <view class="dt">保证金比例</view>          
-      <view class="dd">0%</view>
+      <view class="dd">{{info.deposit}}%</view>
     </view>   
     <view class="dtitem">
       <view class="dt">运费</view>          
-      <view class="dd">{{detail.ship}}</view>
+      <view class="dd">{{info.post_price}}</view>
     </view> 
     <view class="dtitem">
       <view class="dt">拍卖佣金</view>          
@@ -58,34 +58,15 @@
   </view>
 
   <view class="listed">
-     <view class="dtitem">
-      <view class="dt">作者</view>          
-      <view class="dd">{{detail.author}}</view>
+    <view class="dtitem" wx:for="{{info.extends}}" wx:for-item="item" wx:for-index="idx">
+      <view class="dt">{{idx}}</view>          
+      <view class="dd">{{item}}</view>
     </view> 
-    <view class="dtitem">
-      <view class="dt">年代</view>          
-      <view class="dd">{{detail.years}}</view>
-    </view> 
-    <view class="dtitem">
-      <view class="dt">尺寸</view>          
-      <view class="dd">{{detail.size}}</view>
-    </view> 
-    <view class="dtitem">
-      <view class="dt">纸张</view>          
-      <view class="dd">{{detail.paper}}</view>
-    </view> 
-     <view class="dtitem">
-      <view class="dt">函册</view>          
-      <view class="dd">{{detail.book}}</view>
-    </view> 
-    <view class="dtitem">
-      <view class="dt">品相</view>          
-      <view class="dd">{{detail.new}}</view>
-    </view> 
+    
   </view>
 
   <view class="desc">
-    {{detail.desc}}
+    {{info.content}}
   </view>
 
 <!--

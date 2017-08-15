@@ -1,5 +1,5 @@
 // pages/detail/index.js
-const tops = require('../index/tops');
+var util = require('../../utils/util.js')
 
 Page({
 
@@ -7,8 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    detail: {},
-    imgUrls: [],
+    info: {},
     indicatorDots: true,
     autoplay: true,
     interval: 5000,
@@ -19,15 +18,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    for(let top of tops) {
-      if (options.cover === top.icon) {
-        this.setData({
-          detail: top.detail,
-          imgUrls: top.detail.slides
+    var that = this;
+    wx.request({
+      url: 'http://apps.qudiandi.com/auction/item/aid/' + options.aid + '.html',
+      method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      complete: function (res) {
+        res.data.pstart = util.formatTime(new Date(res.data.pstart)),
+        that.setData({
+          info: res.data
         });
-        break;
       }
-    }
+    });
   },
 
   /**

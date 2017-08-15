@@ -2,14 +2,14 @@
 <view class="container">
   
   <view class="logo">
-    <view class="title">点滴第21届大众收藏拍卖会预展资讯</view>
-    <view class="summary">共22件拍品，开始时间：2017-08-13 21:00</view>
+    <view class="title">{{title}}</view>
+    <view class="summary">共{{total}}件拍品，开始时间：{{start}}</view>
     <view class="notes">以下仅为预展资讯，参拍请搜索"点滴拍卖"公众号。</view>    
   </view>
 
-  <view wx:for="{{tops}}" wx:for-item="top" class="topItems"  bindtap="navTo" data-icon="{{top.icon}}">
+  <view wx:for="{{tops}}" wx:for-item="top" wx:key="aid" class="topItems"  bindtap="navTo" data-aid="{{top.aid}}">
       <view class="cpitem_pic">
-        <image src="{{top.icon}}" />
+        <image src="{{'http://photo.qudiandi.com/' + top.images[0] + '!150w_150h_4e'}}" />
       </view>         
       <view class="cpitem_center">
         <view class="title">{{top.title}}</view>
@@ -17,7 +17,8 @@
   </view>
 
   <view class="list-nomore">
-    没有更多了
+    <text wx:if="{{loading}}">正在加载中</text>
+    <text wx:else>没有更多了</text>
   </view>
   
 </view>
