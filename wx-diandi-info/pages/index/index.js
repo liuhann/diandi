@@ -31,7 +31,7 @@ Page({
     var that = this;
 
     wx.request({
-          url: 'http://apps.qudiandi.com/place.html',
+          url: 'https://apps.qudiandi.com/place.html',
           method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
           complete: function(res) {
             that.setData({
