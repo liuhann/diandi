@@ -2,7 +2,7 @@
 <view class="container">
   
   <view class="logo">
-    <view class="title">{{title}}</view>
+    <view class="title">{{title}}预展资讯</view>
     <view class="summary">共{{total}}件拍品，开始时间：{{start}}</view>
     <view class="notes">以下仅为预展资讯，参拍请搜索"点滴拍卖"公众号。</view>    
   </view>

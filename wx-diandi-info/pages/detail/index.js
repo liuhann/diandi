@@ -20,10 +20,14 @@ Page({
   onLoad: function (options) {
     var that = this;
     wx.request({
-      url: 'http://apps.qudiandi.com/auction/item/aid/' + options.aid + '.html',
+      url: 'https://apps.qudiandi.com/auction/item/aid/' + options.aid + '.html',
       method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
       complete: function (res) {
-        res.data.pstart = util.formatTime(new Date(res.data.pstart*1000)),
+        res.data.pstart = util.formatTime(new Date(res.data.pstart*1000));
+
+        res.data.content = res.data.content.replace( /<[^>]*>|<\/[^>]*>/g, '');
+
+
         that.setData({
           info: res.data
         });
