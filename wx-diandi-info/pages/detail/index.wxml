@@ -2,12 +2,12 @@
 <view class="container">
 
   <view class="logo">
-    <view class="title">{{info.name}}</view>
+    <view class="title">{{info.name}}预展资讯</view>
     <view class="summary">共{{total}}件拍品，开始时间：{{info.pstart}}</view>
     <view class="notes">以下仅为预展资讯，参拍请搜索"点滴拍卖"公众号。</view>    
   </view>
 
-  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <swiper indicator-dots="{{indicatorDots}}" indicator-color="rgba(255,255,255,.4)" indicator-active-color="rgba(255,255,255,.6)" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
     <block wx:for="{{info.images}}">
       <swiper-item>
         <image src="{{'http://photo.qudiandi.com/' + item + '!800w_800h_2e'}}" class="slide-image" width="355" height="150"/>
