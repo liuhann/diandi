@@ -39,7 +39,16 @@ Page({
               title: res.data.name,
               total: res.data.number,
               start: util.formatTime(new Date(res.data.start_time*1000)),
-              tops: res.data.auction
+              tops: res.data.auction,
+              futures: [{
+                title: '点滴第22届名人字画拍卖',
+                total: '23',
+                start: util.formatTime(new Date(res.data.start_time * 1000)),
+              }, {
+                title: '点滴第22届名人字画拍卖',
+                total: '23',
+                start: util.formatTime(new Date(res.data.start_time * 1000)),
+              }]
             });
           }
     });

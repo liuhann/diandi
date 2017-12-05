@@ -79,3 +79,30 @@
   font-size: 14px;
   color: #cb3340;
 }
+
+
+
+.future {
+  font-size: 16px;
+  color: #666;
+  background-color: #fff;
+  margin-top: 1vh;
+  -webkit-tap-highlight-color: transparent;
+  padding: 3vw;
+  position: relative;
+}
+
+.future .title {
+  font-size: 18px;
+}
+
+.future .summary {
+  font-size: 12px;
+  color: #999;
+}
+
+.future .btn-view {
+  position: absolute;
+  right: 3vw;
+  top: 4vw;
+}
