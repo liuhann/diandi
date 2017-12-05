@@ -24,10 +24,7 @@ Page({
       method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
       complete: function (res) {
         res.data.pstart = util.formatTime(new Date(res.data.pstart*1000));
-
         res.data.content = res.data.content.replace( /<[^>]*>|<\/[^>]*>/g, '');
-
-
         that.setData({
           info: res.data
         });
