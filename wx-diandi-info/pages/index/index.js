@@ -26,6 +26,36 @@ Page({
       url: '../detail/index?aid=' + event.currentTarget.dataset.aid
     });
   },
+
+  toggleFuture: function(event) {
+    const ftime = event.currentTarget.dataset.ftime;
+    const currentData  = this.data;
+    
+    const setted = {
+      otherplace: []
+    };
+    for(const future of this.data.otherplace) {
+      if (future.start === ftime) {
+        setted.name = future.name;
+        setted.number = future.number;
+        setted.start = future.start;
+        setted.auction  = future.auction || [];
+      } else {
+        setted.otherplace.push(future);
+      }
+    }
+    setted.otherplace.push({
+      name: this.data.name,
+      number: this.data.number,
+      start: this.data.start,
+      auction: this.data.auction
+    });
+
+    console.log(setted);
+
+    this.setData(setted);
+
+  },
   onLoad: function () {
     console.log('onLoad')
     var that = this;
@@ -34,21 +64,16 @@ Page({
           url: 'https://apps.qudiandi.com/place.html',
           method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
           complete: function(res) {
+            for(const place of res.data.otherplace) {
+              place.start = util.formatTime(new Date(place.start_time * 1000));
+            }
             that.setData({
               loading: false,
-              title: res.data.name,
-              total: res.data.number,
+              name: res.data.name,
+              number: res.data.number,
               start: util.formatTime(new Date(res.data.start_time*1000)),
-              tops: res.data.auction,
-              futures: [{
-                title: '点滴第22届名人字画拍卖',
-                total: '23',
-                start: util.formatTime(new Date(res.data.start_time * 1000)),
-              }, {
-                title: '点滴第22届名人字画拍卖',
-                total: '23',
-                start: util.formatTime(new Date(res.data.start_time * 1000)),
-              }]
+              auction: res.data.auction,
+              otherplace: res.data.otherplace,
             });
           }
     });

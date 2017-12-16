@@ -94,6 +94,7 @@
 
 .future .title {
   font-size: 18px;
+  width: 77vw;
 }
 
 .future .summary {
